@@ -12,8 +12,8 @@ createInertiaApp({
 
   resolve: (name) => {
     return resolvePageComponent<ResolvedComponent>(
-      `../pages/${name}.svelte`,
-      import.meta.glob<ResolvedComponent>('../pages/**/*.svelte'),
+      `../views/${name}.svelte`,
+      import.meta.glob<ResolvedComponent>('../views/**/*.svelte'),
     )
   },
 

@@ -5,7 +5,7 @@ const inertiaConfig = defineConfig({
   /**
    * Path to the Edge view that will be used as the root view for Inertia responses
    */
-  rootView: 'inertia_layout',
+  rootView: 'app',
 
   /**
    * Data that should be shared with all rendered pages
@@ -19,7 +19,7 @@ const inertiaConfig = defineConfig({
    */
   ssr: {
     enabled: true,
-    entrypoint: 'inertia/app/ssr.ts'
+    entrypoint: 'resources/ts/ssr.ts'
   }
 })
 

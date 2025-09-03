@@ -6,8 +6,8 @@ export default function render(page: any) {
   return createInertiaApp({
     page,
     resolve: (name) => {
-      const pages = import.meta.glob<ResolvedComponent>('../pages/**/*.svelte', { eager: true })
-      return pages[`../pages/${name}.svelte`]
+      const pages = import.meta.glob<ResolvedComponent>('../views/**/*.svelte', { eager: true })
+      return pages[`../views/${name}.svelte`]
     },
     setup({ App, props }) {
       return svelteRender(App, { props })

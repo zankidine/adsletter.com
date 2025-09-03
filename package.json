@@ -62,12 +62,16 @@
     "@adonisjs/static": "^1.1.1",
     "@adonisjs/vite": "^4.0.0",
     "@inertiajs/svelte": "^2.1.3",
+    "@lucide/svelte": "^0.542.0",
+    "@tailwindcss/vite": "^4.1.12",
     "@vinejs/vine": "^3.0.1",
+    "bits-ui": "^2.9.6",
     "edge.js": "^6.2.1",
     "luxon": "^3.7.1",
     "pg": "^8.16.3",
     "reflect-metadata": "^0.2.2",
-    "svelte": "^5.38.6"
+    "svelte": "^5.38.6",
+    "tailwindcss": "^4.1.12"
   },
   "hotHook": {
     "boundaries": [
