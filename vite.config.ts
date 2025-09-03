@@ -8,9 +8,10 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [
     tailwindcss(),
-    inertia({ ssr: { enabled: true, entrypoint: 'inertia/app/ssr.ts' } }), 
+    inertia({ ssr: { enabled: true, entrypoint: 'resources/ts/ssr.ts' } }), 
     svelte(), 
-    adonisjs({ entrypoints: ['inertia/app/app.ts'], reload: ['resources/views/**/*.edge'] })],
+    adonisjs({ entrypoints: ['resources/ts/app.ts'], reload: ['resources/views/**/*.{edge,svelte}'] }),
+  ],
 
   /**
    * Define aliases for importing modules from

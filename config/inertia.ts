@@ -19,7 +19,8 @@ const inertiaConfig = defineConfig({
    */
   ssr: {
     enabled: true,
-    entrypoint: 'resources/ts/ssr.ts'
+    entrypoint: 'resources/ts/ssr.ts',
+    pages: (_ctx, page) => !page.startsWith('private')
   }
 })
 

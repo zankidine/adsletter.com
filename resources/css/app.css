@@ -1,2 +1,73 @@
+@font-face {
+    font-family: "Inter Tight";
+    src: url("../fonts/InterTight-VariableFont_wght.ttf") format("truetype");
+    font-weight: 100 900
+}
+
 @import "tailwindcss";
 @source "../views";
+
+@theme {
+    --font-inter: "Inter Tight", sans-serif;
+
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 600;
+    --font-weight-extrabold: 700;
+    --font-weight-black: 800;
+
+    --color-primary: #222;
+    --color-link: #222;
+    --color-white: #fff;
+    --color-orange: #FA5D29;
+    --color-errors: #FA5D29;
+    --color-blue: #49B3FC;
+    --color-featured: #f8f0ee;
+    --color-red: #FA5D29;
+
+    --border-gray: #ededed;
+    --bg-input-hover: #f8f8f8;
+    --border-input: #ededed;
+
+    --bg-primary: #F8F8F8;
+    --bg-secondary: #222;
+
+    --bg-white: white;
+    --avatar-bg: #F8F8F8;
+    --alert-green: #e0f4d9;
+    --alert-yellow: #FFF083;
+
+    --img-resizing-site: 16 / 12;
+    --img-resizing-paronamic: 2 / 1;
+    --img-resizing-desktop: 19 / 10;
+}
+
+@layer base {
+    /* This will change the scrollbar track */
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        font-size: var(--text-size-primary)
+    }
+
+    body, #app {
+        font-family: var(--font-inter);
+        font-size: var(--text-size-primary);
+        font-weight: 300;
+        background: var(--bg-primary);
+        color: var(--color-primary);
+        line-height: 200%;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility
+    }
+
+    a {
+        color: var(--color-link);
+    }
+}
