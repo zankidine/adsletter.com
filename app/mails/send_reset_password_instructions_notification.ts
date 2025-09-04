@@ -12,8 +12,7 @@ export default class SendResetPasswordInstructionsNotification extends BaseMail 
   }
 
   prepare() {
-    // TODO: set resetUrl to the actual reset URL
-    const resetUrl = ''
+    const resetUrl = `https://adsletter.com/reset-password?key=${this.options.resetToken}`
     this.message
       .to(this.options.user.email)
       .from('support@adsletter.com', 'AdsLetter')
