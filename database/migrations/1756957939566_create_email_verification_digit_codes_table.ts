@@ -1,7 +1,7 @@
 import { BaseSchema } from '@adonisjs/lucid/schema'
 
 export default class extends BaseSchema {
-  protected tableName = 'email_verification_codes'
+  protected tableName = 'email_verification_digit_codes'
 
   async up() {
     this.schema.createTable(this.tableName, (table) => {

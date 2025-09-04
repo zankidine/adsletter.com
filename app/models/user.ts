@@ -4,7 +4,7 @@ import { compose } from '@adonisjs/core/helpers'
 import { BaseModel, column, hasMany } from '@adonisjs/lucid/orm'
 import { withAuthFinder } from '@adonisjs/auth/mixins/lucid'
 import type { HasMany } from '@adonisjs/lucid/types/relations'
-import EmailVerificationCode from './email_verification_code.js'
+import EmailVerificationDigitCode from './email_verification_digit_code.js'
 
 const AuthFinder = withAuthFinder(() => hash.use('scrypt'), {
   uids: ['email'],
@@ -48,6 +48,39 @@ export default class User extends compose(BaseModel, AuthFinder) {
   @column()
   declare userAgent: string | null
 
+  @column()
+  declare userName: string | null
+
+  @column()
+  declare bio: string | null
+
+  @column()
+  declare website: string | null
+
+  @column()
+  declare instagram: string | null
+
+  @column()
+  declare twitter: string | null
+
+  @column()
+  declare linkedin: string | null
+
+  @column()
+  declare facebook: string | null
+
+  @column()
+  declare youtube: string | null
+
+  @column()
+  declare tiktok: string | null
+
+  @column()
+  declare github: string | null
+
+  @column()
+  declare phoneNumber: string | null
+
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
 
@@ -58,7 +91,7 @@ export default class User extends compose(BaseModel, AuthFinder) {
   declare lastLoginAt: DateTime | null
 
   // Relations
-  @hasMany(() => EmailVerificationCode)
-  declare emailVerificationCodes: HasMany<typeof EmailVerificationCode>
+  @hasMany(() => EmailVerificationDigitCode)
+  declare emailVerificationDigitCodes: HasMany<typeof EmailVerificationDigitCode>
 
 }

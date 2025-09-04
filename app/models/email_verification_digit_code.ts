@@ -4,7 +4,7 @@ import type { BelongsTo } from '@adonisjs/lucid/types/relations'
 import User from './user.js'
 import type { IDigitCodeType } from '#enums/digit_code_type'
 
-export default class EmailVerificationCode extends BaseModel {
+export default class EmailVerificationDigitCode extends BaseModel {
   @column({ isPrimary: true })
   declare id: string
 
@@ -33,21 +33,4 @@ export default class EmailVerificationCode extends BaseModel {
   @belongsTo(() => User)
   declare user: BelongsTo<typeof User>
 
-  // Helper methods
-  get isExpired(): boolean {
-    if (!this.expiresAt) return false
-    return this.expiresAt < DateTime.now()
-  }
-
-  get isUsed(): boolean {
-    return this.usedAt !== null
-  }
-
-  get isValid(): boolean {
-    return !this.isExpired && !this.isUsed
-  }
-
-  markAsUsed(): void {
-    this.usedAt = DateTime.now()
-  }
 }
