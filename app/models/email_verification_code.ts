@@ -2,6 +2,7 @@ import { DateTime } from 'luxon'
 import { BaseModel, column, belongsTo } from '@adonisjs/lucid/orm'
 import type { BelongsTo } from '@adonisjs/lucid/types/relations'
 import User from './user.js'
+import type { IDigitCodeType } from '#enums/digit_code_type'
 
 export default class EmailVerificationCode extends BaseModel {
   @column({ isPrimary: true })
@@ -14,7 +15,7 @@ export default class EmailVerificationCode extends BaseModel {
   declare code: string
 
   @column()
-  declare type: 'registration' | 'login' | 'password_reset'
+  declare type: IDigitCodeType
 
   @column.dateTime()
   declare expiresAt: DateTime | null
